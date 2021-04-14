@@ -1,4 +1,4 @@
-package com.huatec.hiot_cloud;
+package com.huatec.hiot_cloud.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.mvptest.model.User;
 
 public class MainActivity extends AppCompatActivity {
