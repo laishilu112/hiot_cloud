@@ -19,6 +19,7 @@ import android.app.Activity;
 
 
 import com.huatec.hiot_cloud.injection.PerActivity;
+import com.huatec.hiot_cloud.mvptest.dagger2test.ThirdObj;
 
 import dagger.Module;
 import dagger.Provides;
@@ -42,5 +43,8 @@ public class ActivityModule {
     Activity activity() {
         return this.activity;
     }
+    @Provides
+    public ThirdObj getThirdObj(){
+        return new ThirdObj();}
 
 }
