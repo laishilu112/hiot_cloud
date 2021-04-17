@@ -7,9 +7,11 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
+import com.huatec.hiot_cloud.base.BaseActivity;
+import com.huatec.hiot_cloud.base.BasePresenter;
 import com.huatec.hiot_cloud.mvptest.model.User;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void login(User user) {
-        if ("lisi".equals(user.getUserName()) && "123".equals(user.getPassword())) {
-        Toast.makeText(this, "登陆成功", Toast.LENGTH_SHORT).show();
-    }else{
-        Toast.makeText(this, "登陆失败", Toast.LENGTH_SHORT).show();
+    @Override
+    public BasePresenter createPresenter() {
+        return null;
     }
-}}
+
+
+}
