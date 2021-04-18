@@ -1,17 +1,14 @@
-package com.huatec.hiot_cloud.main;
+package com.huatec.hiot_cloud.ui.main;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
-import com.huatec.hiot_cloud.base.BaseActivity;
-import com.huatec.hiot_cloud.base.BasePresenter;
-import com.huatec.hiot_cloud.mvptest.model.User;
+import com.huatec.hiot_cloud.ui.base.BaseActivity;
+import com.huatec.hiot_cloud.ui.base.BasePresenter;
 
 import utils.Constans;
 
@@ -24,7 +21,8 @@ public class MainActivity extends BaseActivity {
 
        //设置Viewpager
         ViewPager vpMain =findViewById(R.id.vp_main);
-        vpMain.setAdapter(new  MainViewPagerAdapter());
+        vpMain.setAdapter(new  MainViewPagerAdapter(getSupportFragmentManager(),
+                FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT));
         vpMain.setOffscreenPageLimit(Constans.MAIN_FRAGMENT_COUNT);
 
         RadioGroup rgMain = findViewById(R.id.rg_main);
@@ -39,7 +37,7 @@ public class MainActivity extends BaseActivity {
                         vpMain.setCurrentItem(Constans.MAIN_VIEWPAGER_INDEX_EQUIPMENT);
                         break;
                     case R.id.rb_scene:
-                        vpMain.setCurrentItem(Constans.MAIN_VIEWPAGER_INDEX_SCENE;
+                        vpMain.setCurrentItem(Constans.MAIN_VIEWPAGER_INDEX_SCENE);
                         break;
                     case R.id.rb_mine:
                         vpMain.setCurrentItem(Constans.MAIN_VIEWPAGER_INDEX_MINE);

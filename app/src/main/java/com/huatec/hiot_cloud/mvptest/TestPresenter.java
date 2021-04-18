@@ -1,6 +1,6 @@
 package com.huatec.hiot_cloud.mvptest;
 
-import com.huatec.hiot_cloud.base.BasePresenter;
+import com.huatec.hiot_cloud.ui.base.BasePresenter;
 import com.huatec.hiot_cloud.mvptest.dagger2test.ThirdObj;
 import com.huatec.hiot_cloud.mvptest.model.User;
 import javax.inject.Inject;
