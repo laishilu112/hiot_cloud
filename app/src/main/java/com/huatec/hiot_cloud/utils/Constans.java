@@ -1,6 +1,4 @@
-package utils;
-
-import java.security.PublicKey;
+package com.huatec.hiot_cloud.utils;
 
 /**
  * 常量类

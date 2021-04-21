@@ -1,4 +1,4 @@
-package test.lifecycletest;
+package com.huatec.hiot_cloud.test.lifecycletest;
 
 import androidx.appcompat.app.AppCompatActivity;
 

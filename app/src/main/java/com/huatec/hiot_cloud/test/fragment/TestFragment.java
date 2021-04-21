@@ -1,4 +1,4 @@
-package test.fragment;
+package com.huatec.hiot_cloud.test.fragment;
 
 import android.os.Bundle;
 

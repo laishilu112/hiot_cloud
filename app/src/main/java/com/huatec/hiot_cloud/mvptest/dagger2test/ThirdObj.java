@@ -7,6 +7,6 @@ import android.util.Log;
  */
 public class ThirdObj {
     public void ThirdAction(){
-        Log.d("ThirdObj","third action test");
+        Log.d("ThirdObj","third action com.huatec.hiot_cloud.test");
     }
 }

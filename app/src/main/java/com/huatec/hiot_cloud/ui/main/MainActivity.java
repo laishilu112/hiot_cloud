@@ -10,7 +10,7 @@ import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.ui.base.BaseActivity;
 import com.huatec.hiot_cloud.ui.base.BasePresenter;
 
-import utils.Constans;
+import com.huatec.hiot_cloud.utils.Constans;
 
 public class MainActivity extends BaseActivity {
 
