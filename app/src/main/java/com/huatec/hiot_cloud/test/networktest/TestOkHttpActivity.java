@@ -38,7 +38,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test_ok_http);
 
         //execute方法测试
-        Button btnExecute = findViewById(R.id.bth_okhttp_execute);
+        Button btnExecute = findViewById(R.id.btn_okhttp_execute);
         btnExecute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +47,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
             }
         });
         //enqueue方法测试
-        Button btnEnqueue = findViewById(R.id.bth_okhttp_enqueue);
+        Button btnEnqueue = findViewById(R.id.btn_okhttp_enqueue);
         btnEnqueue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
         });
 
         //登陆测试
-        Button bthLogin = findViewById(R.id.bth_okhttp_login);
+        Button bthLogin = findViewById(R.id.btn_okhttp_login);
         bthLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,21 +65,21 @@ public class TestOkHttpActivity extends AppCompatActivity {
             }
         });
         //获取用户信息
-        Button bthGetUserInfo = findViewById(R.id.bth_okhttp_userinfo);
+        Button bthGetUserInfo = findViewById(R.id.btn_okhttp_userinfo);
         bthGetUserInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getUserInfo("a7190eff01fb4619925aa00a51b33780_f36d03fe91544d9a9c0077f7979e8e47_use");
+                getUserInfo("a7190eff01fb4619925aa00a51b33780_b4fa533bd576437382b05650e299cc35_use");
 
             }
         });
 
         //修改邮箱
-        Button bthUpdateEmail = findViewById(R.id.bth_okhttp_update_email);
+        Button bthUpdateEmail = findViewById(R.id.btn_okhttp_update_email);
         bthUpdateEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               updateEmail("a7190eff01fb4619925aa00a51b33780_f36d03fe91544d9a9c0077f7979e8e47_use","cl@qq.com");
+                updateEmail("a7190eff01fb4619925aa00a51b33780_b4fa533bd576437382b05650e299cc35_use", "cl@qq.com");
 
             }
         });
@@ -113,6 +113,7 @@ public class TestOkHttpActivity extends AppCompatActivity {
         Request request = new  Request.Builder().get().url(url).header("Authorization",authorization).build();
         callEnqueue(okHttpClient, request);
     }
+
 
     private void callEnqueue(OkHttpClient okHttpClient, Request request) {
         okHttpClient.newCall(request).enqueue(new Callback() {

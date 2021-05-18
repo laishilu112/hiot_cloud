@@ -47,7 +47,7 @@ public abstract class BaseFragment <V extends BaseView , P extends BasePresenter
     public void onDestroyView() {
         super.onDestroyView();
         if (presenter != null){
-            presenter.destroy();
+            presenter.destory();
         }
     }
 

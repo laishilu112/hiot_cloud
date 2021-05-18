@@ -7,33 +7,33 @@
     android:orientation="vertical"
     tools:context=".test.networktest.TestOkHttpActivity">
     <Button
-        android:id="@+id/bth_okhttp_execute"
+        android:id="@+id/btn_okhttp_execute"
         android:text="execute"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/bth_okhttp_enqueue"
+        android:id="@+id/btn_okhttp_enqueue"
         android:text="execute"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
 
     <Button
-        android:id="@+id/bth_okhttp_login"
+        android:id="@+id/btn_okhttp_login"
         android:text="登录"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
 
     <Button
-        android:id="@+id/bth_okhttp_userinfo"
+        android:id="@+id/btn_okhttp_userinfo"
         android:text="用户信息"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/bth_okhttp_update_email"
+        android:id="@+id/btn_okhttp_update_email"
         android:text="修改邮箱"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
