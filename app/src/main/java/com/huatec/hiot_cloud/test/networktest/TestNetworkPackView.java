@@ -3,7 +3,7 @@ package com.huatec.hiot_cloud.test.networktest;
 import com.huatec.hiot_cloud.ui.base.BaseView;
 
 /**
- * 网络敞封装测试MVP架构view层接口
+ * 网络封装测试MVP架构view层接口
  */
 public interface TestNetworkPackView extends BaseView {
     /**
@@ -14,9 +14,9 @@ public interface TestNetworkPackView extends BaseView {
     void showToken(String token);
 
     /**
-     * 显示信息
+     * 显示错误信息
      *
      * @param message
      */
-    void shouMessage(String message);
+    void showMessage(String message);
 }

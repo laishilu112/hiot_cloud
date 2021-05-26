@@ -5,8 +5,6 @@ import com.huatec.hiot_cloud.test.networktest.ResultBase;
 import com.huatec.hiot_cloud.test.networktest.UserBean;
 
 import io.reactivex.Observable;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
@@ -18,6 +16,7 @@ import retrofit2.http.Query;
  * 网络请求接口
  */
 public interface NetworkService {
+
     public static final String BASE_URL = "http://114.67.88.191:8080/";
 
     /**
@@ -46,12 +45,12 @@ public interface NetworkService {
     /**
      * 修改邮箱
      *
-     * @param authorization
+     * @param Authorization
      * @param email
      * @return
      */
     @PUT("/user/email")
-    Observable<ResultBase<String>> updateEmail(@Header("Authorization") String authorization,
+    Observable<ResultBase<String>> updateEmail(@Header("Authorization") String Authorization,
                                                @Query("email") String email);
 
     /**

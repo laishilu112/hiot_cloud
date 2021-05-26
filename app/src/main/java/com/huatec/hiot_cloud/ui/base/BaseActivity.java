@@ -1,9 +1,11 @@
 package com.huatec.hiot_cloud.ui.base;
+
 import android.app.Application;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import  androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.huatec.hiot_cloud.App;
 import com.huatec.hiot_cloud.injection.component.ActivityComponent;
@@ -12,30 +14,40 @@ import com.huatec.hiot_cloud.injection.component.DaggerActivityComponent;
 import com.huatec.hiot_cloud.injection.module.ActivityModule;
 
 /**
- * MVP架构Activity基类
+ * MVP架构的Activity实现类
  */
-public abstract class BaseActivity<V extends BaseView , P extends BasePresenter<V> > extends AppCompatActivity implements BaseView {
+public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V>> extends AppCompatActivity implements BaseView {
     private P presenter;
+
     /**
      * 活动注入器
      */
     private ActivityComponent mActivityComponent;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         injectIndependies();
         presenter = createPresenter();
-        if(presenter !=null) {
+        if (presenter != null) {
             presenter.setView((V) this);
         }
     }
-    public abstract P  createPresenter();
+
+
+    public abstract P createPresenter();
+
+
     public abstract void injectIndependies();
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        presenter.destory();
-
+        if (presenter != null) {
+            presenter.destory();
+        }
     }
 
     @Override
@@ -79,4 +91,12 @@ public abstract class BaseActivity<V extends BaseView , P extends BasePresenter<
     protected ActivityModule getActivityModule() {
         return new ActivityModule(this);
     }
+
+    @Override
+    public void showMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+
+    }
+
+
 }

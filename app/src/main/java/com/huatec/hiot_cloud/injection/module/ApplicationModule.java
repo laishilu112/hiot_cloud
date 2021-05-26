@@ -18,8 +18,6 @@ package com.huatec.hiot_cloud.injection.module;
 import android.app.Application;
 import android.content.Context;
 
-
-//import com.huatec.hiot_cloud.App;
 import com.google.gson.Gson;
 import com.huatec.hiot_cloud.App;
 import com.huatec.hiot_cloud.BuildConfig;
@@ -39,6 +37,8 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+
+//import com.huatec.hiot_cloud.App;
 
 /**
  * Dagger module that provides objects which will live during the application lifecycle.
@@ -67,7 +67,8 @@ public class ApplicationModule {
     @Provides
     @Singleton
     OkHttpClient provideOkHttpClient() {
-
+//        return new OkHttpClient();
+//        okhttp使用构建者模式创建对象
         final OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.connectTimeout(6, TimeUnit.SECONDS);
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -99,4 +100,6 @@ public class ApplicationModule {
     Gson provideGson() {
         return new Gson();
     }
+
 }
+

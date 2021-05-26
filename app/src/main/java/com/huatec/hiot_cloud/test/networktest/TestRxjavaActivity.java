@@ -1,7 +1,5 @@
 package com.huatec.hiot_cloud.test.networktest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -9,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.data.NetworkService;
@@ -63,7 +63,7 @@ public class TestRxjavaActivity extends AppCompatActivity {
         btnUpdateEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateEmail(etToken.getText().toString(), "kkjyuy1@qq.com");
+                updateEmail(etToken.getText().toString(), "99999211w1@qq.com");
             }
         });
 
@@ -82,8 +82,8 @@ public class TestRxjavaActivity extends AppCompatActivity {
      */
     private void register() {
         UserBean userBean = new UserBean();
-        userBean.setUsername("ohaghkk1");
-        userBean.setEmail("zajuja@qq.com");
+        userBean.setUsername("jlkhkkk1");
+        userBean.setEmail("8886661a@qq.com");
         userBean.setPassword("abc123");
         userBean.setUserType("1");
         Observable<ResultBase<UserBean>> observable = service.register(userBean);
@@ -115,11 +115,11 @@ public class TestRxjavaActivity extends AppCompatActivity {
     /**
      * 修改邮箱
      *
-     * @param authorization
+     * @param Authorization
      * @param email
      */
-    private void updateEmail(String authorization, String email) {
-        service.updateEmail(authorization, email)
+    private void updateEmail(String Authorization, String email) {
+        service.updateEmail(Authorization, email)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<ResultBase<String>>() {
@@ -130,8 +130,8 @@ public class TestRxjavaActivity extends AppCompatActivity {
 
                     @Override
                     public void onNext(ResultBase<String> resultBase) {
-                        String str = resultBase.getData();
-                        Toast.makeText(TestRxjavaActivity.this, resultBase.getMsg(), Toast.LENGTH_SHORT).show();
+                        String str = resultBase.getMsg();
+                        Toast.makeText(TestRxjavaActivity.this, str, Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
