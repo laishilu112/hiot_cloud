@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".test.networktest.TestNetworkPackActivity"></activity>
         <activity android:name=".test.networktest.TestRxjavaActivity" />
+
         <activity android:name=".test.networktest.TestGsonActivity" />
         <activity android:name=".test.networktest.TestRetrofitActivity" />
         <activity android:name=".test.networktest.TestOkHttpActivity" />
@@ -31,6 +32,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".ui.main.MainActivity"
