@@ -13,19 +13,16 @@ import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.ui.base.BaseFragment;
 import com.huatec.hiot_cloud.ui.base.BasePresenter;
 
-
 /**
  * 设备Fragment类
  */
 public class EquipmentFragment extends BaseFragment {
-
     /**
-     * 创建实例
+     * 创建Fragment实例
      *
      * @return
      */
     public static EquipmentFragment newInstance(){
-
         EquipmentFragment fragment = new EquipmentFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -38,30 +35,18 @@ public class EquipmentFragment extends BaseFragment {
     }
 
     @Override
-    public void injectIndependies() {
-
+    public void injectDependencies() {
     }
 
     @Override
     public View initView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         return view;
     }
-
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         TextView tvMainFragment = view.findViewById(R.id.tv_main_fragment);
         tvMainFragment.setText("设备");
-
-    }
-
-    @Override
-    public void injectDependencies() {
-
-
     }
 }

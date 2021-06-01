@@ -16,6 +16,20 @@
         android:src="@drawable/huatec_logo" />
 
     <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tiptet_user_name"
+        android:hint="@string/hint_enter_user_name"
+        android:drawableLeft="@drawable/icon_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:drawablePadding="10dp"
+        android:maxLines="1"
+        android:paddingBottom="15dp"
+        android:textColor="#999999"
+        android:textColorHint="#999999"
+        android:textSize="16sp" />
+
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tiptet_email"
         android:hint="请输入电子邮箱"
         android:drawableLeft="@drawable/icon_email"
@@ -47,35 +61,25 @@
 
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/login_button_bg"
-        android:text="登录"
+        android:text="注册"
         android:textColor="#ffffff"
         android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/tv_forget_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:clickable="false"
-        android:gravity="end"
-        android:padding="5dp"
-        android:text="忘记密码？"
-        android:textColor="#05eeff" />
 
     <TextView
-        android:id="@+id/tv_link_signup"
+        android:id="@+id/tv_link_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="false"
         android:gravity="center"
         android:paddingBottom="10dp"
-        android:text="没有账户吗？创建账户"
+        android:text="@string/login_direct"
         android:textColor="#05eeff"
         android:textSize="16sp" />
 

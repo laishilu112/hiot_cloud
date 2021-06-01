@@ -1,5 +1,6 @@
 package com.huatec.hiot_cloud.ui.base;
 
+
 import android.util.Log;
 
 import com.huatec.hiot_cloud.utils.LoadingUtil;
@@ -11,7 +12,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * MVP架构主持者层基类
+ * MVP架构presenter层基类
  */
 public class BasePresenter<V extends BaseView> {
     private V view;
@@ -27,8 +28,8 @@ public class BasePresenter<V extends BaseView> {
         return view;
     }
 
-    public void destory() {
-        if (view != null) {
+    public void destroy() {
+        if (viewAttached()) {
             view = null;
         }
     }
@@ -36,7 +37,6 @@ public class BasePresenter<V extends BaseView> {
     public boolean viewAttached() {
         return view != null;
     }
-
 
     public <T> void subscrib(Observable<T> observable, final RequestCallback<T> callback) {
         observable.subscribeOn(Schedulers.io())
@@ -51,16 +51,19 @@ public class BasePresenter<V extends BaseView> {
                     @Override
                     public void onNext(T t) {
                         callback.onNext(t);
+
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         callback.onError(e);
+
                     }
 
                     @Override
                     public void onComplete() {
                         callback.onComplete();
+
                     }
                 });
     }
@@ -84,14 +87,12 @@ public class BasePresenter<V extends BaseView> {
             //对话框隐藏
             LoadingUtil.hideLoading();
             Log.e(TAG, "onError: ", e);
-
+            getView().showMessage("服务器开小差，请稍后再试");
         }
-
 
         public void onComplete() {
             //对话框隐藏
             LoadingUtil.hideLoading();
-
         }
     }
 }

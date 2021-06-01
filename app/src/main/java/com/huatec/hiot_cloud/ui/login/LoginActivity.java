@@ -7,12 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.android.material.textfield.TextInputEditText;
 import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.ui.base.BaseActivity;
 import com.huatec.hiot_cloud.ui.main.MainActivity;
+import com.huatec.hiot_cloud.ui.register.RegisterActivity;
 import com.huatec.hiot_cloud.utils.LoadingUtil;
 import com.huatec.hiot_cloud.utils.ValidatorUtils;
+import com.google.android.material.textfield.TextInputEditText;
 
 import javax.inject.Inject;
 
@@ -138,5 +139,10 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
         }
     }
 
-
+    @OnClick(R.id.tv_link_signup)
+    public void onViewClicked() {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

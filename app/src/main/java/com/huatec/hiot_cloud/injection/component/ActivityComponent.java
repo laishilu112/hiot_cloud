@@ -22,6 +22,8 @@ import com.huatec.hiot_cloud.mvptest.TestMVPActivity;
 import com.huatec.hiot_cloud.test.networktest.TestNetworkPackActivity;
 import com.huatec.hiot_cloud.ui.login.LoginActivity;
 import com.huatec.hiot_cloud.ui.main.MainActivity;
+import com.huatec.hiot_cloud.ui.mine.MineFragment;
+import com.huatec.hiot_cloud.ui.register.RegisterActivity;
 import com.huatec.hiot_cloud.ui.splash.SplashActivity;
 
 import dagger.Component;
@@ -45,6 +47,10 @@ public interface ActivityComponent {
     void inject(LoginActivity activity);
 
     void inject(SplashActivity activity);
+
+    void inject(RegisterActivity activity);
+
+    void inject(MineFragment fragment);
 
     @Component.Builder
     interface ActivityComponentBuilder {

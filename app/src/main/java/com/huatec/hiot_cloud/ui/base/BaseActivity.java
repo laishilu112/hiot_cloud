@@ -46,7 +46,7 @@ public abstract class BaseActivity<V extends BaseView, P extends BasePresenter<V
     protected void onDestroy() {
         super.onDestroy();
         if (presenter != null) {
-            presenter.destory();
+            presenter.destroy();
         }
     }
 
